@@ -1,0 +1,116 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+body *{
+    box-sizing: border-box;
+}
+.statusbar-overlay {
+    background: #000000;
+}
+
+.size-20 { font-size: 20px }
+.size-22 { font-size: 22px }
+.size-25 { font-size: 25px }
+.size-29 { font-size: 29px }
+.size-50 { font-size: 50px }
+
+.panel-left{
+    background: #2d2d2d;
+}
+.main-menu{
+    margin: -20px -15px;
+    color: #fff;
+}
+.main-menu__title{
+    font-size: 24px;
+    padding: 15px 15px;
+    overflow: hidden;
+}
+.main-menu__close{
+    float: right;
+    font-size: 24px;
+    color: #fff;
+}
+.main-menu__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-menu__item{
+    font-size: 16px;
+    line-height: 22px;
+
+    border-top: 1px solid #fff;
+    transition: 0.3s;
+}
+.main-menu__item i{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 22px;
+    vertical-align: top;
+    margin-right: 6px;
+}
+.main-menu__item a{
+    display: block;
+    padding: 15px 15px;
+    color: #fff;
+}
+.main-menu__item a.active{
+    background: #303030;
+}
+
+.ball{
+    position: relative;
+    display: block;
+    width: 90%;
+    height: 0;
+    padding-bottom: 90%;
+    margin: 50px auto;
+    border: 3px solid #303030;
+    border-radius: 50%;
+    background: #fff;
+}
+.ball__answer-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.ball__answer-table{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.ball__answer-text{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10%;
+    font-size: 16px;
+}
+.ball__answer-text.active{
+    background: #00bcd4;
+}
+
+#btn__get-answer {
+    transition: 0.2s;
+}
+/* Active/tapped state */
+#btn__get-answer.active-state {
+    color: #fff;
+    background: #007aff;
+}
+/* Fallback, when active state is disabled */
+html:not(.watch-active-state) #btn__get-answer:active {
+    color: #fff;
+    background: #007aff;
+}
